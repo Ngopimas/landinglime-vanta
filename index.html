@@ -6,78 +6,872 @@
     <title>Deeplime</title>
     <link rel="stylesheet" href="./css/tailwind.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet" />
   </head>
-  <body>
-    <div class="relative overflow-hidden h-screen bg-gray-900">
-      <div class="globe-canvas absolute h-full w-full object-cover"></div>
-      <div class="inset-0 bg-gray-900 opacity-25 absolute"></div>
-      <header class="absolute top-0 left-0 right-0 z-20">
-        <nav class="container mx-auto px-6 md:px-12 py-4">
-          <div class="md:flex justify-between items-center">
-            <div class="flex justify-between items-center">
-              <a href="#" class="text-gray-50">
-                <img src="assets/logo.svg" alt="logo" class="h-6" />
-              </a>
-              <div class="md:hidden">
-                <button class="text-gray-50 focus:outline-none">
-                  <svg
-                    class="h-12 w-12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+  <body class="mx-auto text-gray-800" id="home">
+    <!-- Header -->
+    <header class="top-0 left-0 right-0 sticky z-20 bg-white">
+      <nav class="container mx-auto px-6 lg:px-12 py-4 relative">
+        <div class="lg:flex justify-between items-center">
+          <div class="flex justify-between items-center">
+            <a href="#home" id="logo">
+              <img src="./assets/logo.svg" alt="logo deeplime" class="h-6" />
+            </a>
+            <div class="lg:hidden pt-2">
+              <input type="checkbox" id="hamburger" />
+              <label for="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+              </label>
+              <ul class="nav-links">
+                <li>
+                  <a href="" class="text-gray-50 font-semibold text-3xl"
+                    >Sign in</a
                   >
-                    <path
-                      d="M4 6H20M4 12H20M4 18H20"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="hidden md:flex items-center">
-              <a
-                class="text-lg uppercase mx-3 text-gray-50 cursor-pointer hover:text-gray-300 tracking-wider"
-              >
-                Documentation
-              </a>
-              <a
-                class="text-lg font-bold uppercase mx-3 text-gray-50 cursor-pointer hover:text-gray-300 tracking-wider"
-              >
-                Contact
-              </a>
+                </li>
+                <li>
+                  <a href="" class="text-gray-50 font-semibold text-3xl"
+                    >Documentation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    class="contact-link text-gray-50 font-semibold text-3xl"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
-        </nav>
-      </header>
+          <div class="hidden lg:flex items-center">
+            <a
+              class="text-lg font-semibold text-gray-700 cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-green-500 transition duration-500"
+            >
+              Documentation
+            </a>
+            <a
+              href="#contact"
+              class="text-lg mx-24 font-semibold text-gray-700 cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-green-500 transition duration-500"
+            >
+              Contact
+            </a>
+            <a
+              class="text-lg font-semibold text-gray-700 cursor-pointer border-b-2 border-transparent hover:border-b-2 hover:border-green-500 transition duration-500"
+            >
+              Sign In
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section
+      class="relative flex flex-col-reverse pt-20 lg:pt-0 lg:flex-col lg:pb-0 lg:max-h-screen bg-white"
+    >
       <div
-        class="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40"
+        class="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto lg:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-8/12 lg:max-w-full lg:absolute xl:px-0"
       >
-        <div class="lg:w-4/5 xl:w-3/5 flex flex-col items-start relative z-10">
-          <span class="font-bold text-yellow-400 text-3xl sm:text-4xl">
-            Explore, Model, Share
-          </span>
+        <svg
+          class="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block"
+          viewBox="0 0 100 100"
+          fill="currentColor"
+          preserveAspectRatio="none slice"
+        >
+          <path d="M50 0H100L50 100H0L50 0Z"></path>
+        </svg>
+        <img
+          class="object-cover w-full h-56 hidden lg:block shadow-lg lg:rounded-none lg:shadow-none lg:h-full"
+          src="./assets/bg-mineral.jpg"
+          alt="background mineral"
+        />
+      </div>
+
+      <div class="relative container mx-auto px-6 lg:px-12">
+        <div class="mb-16 lg:my-40 lg:pr-5">
           <h1
-            class="uppercase text-4xl sm:text-5xl text-gray-50 mt-4 tracking-wider leading-title"
+            class="mb-8 text-base text-gray-700 lg:text-2xl uppercase leading-title text-center md:text-left"
           >
-            Tools built to assist geologists
-            <br />
+            Tools built to assist geologists <br />
             in their digital transformation
           </h1>
-          <a
-            href="#"
-            class="block hover:bg-green-600 bg-yellow-400 text-gray-900 py-3 px-4 rounded-lg text-lg hover:text-gray-50 font-bold uppercase mt-10"
+          <h2
+            class="mb-8 lg:-ml-2 font-sans text-6xl font-black tracking-tighter text-gray-900 sm:text-9xl sm:leading-none title text-center md:text-left"
           >
-            Find your solution
-          </a>
+            Explore, <br class="hidden lg:block" />
+            Model, <br class="hidden lg:block" />
+            Share
+          </h2>
+
+          <div class="w-full lg:w-1/3">
+            <a href="#about">
+              <button
+                class="cta-svg-wrapper focus:outline-none active:outline-none mt-16"
+              >
+                <svg
+                  class="cta-svg mx-auto lg:mx-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect class="cta-shape" />
+                  <span class="cta-text text-2xl font-semibold">
+                    Find your solution
+                  </span>
+                </svg>
+              </button>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- About -->
+    <section class="container px-4 mx-auto my-36 lg:px-4" id="about">
+      <div class="flex flex-col w-full mb-12 text-left lg:text-center">
+        <h2
+          class="mb-12 text-4xl font-extrabold tracking-tight md:leading-tight text-gray-900 sm:text-6xl"
+        >
+          Enough of your sheet?
+          <br class="" />
+          You deserve better tools.
+        </h2>
+        <p class="mx-auto text-xl leading-relaxed text-gray-700 lg:w-1/2">
+          At <span class="primary-color font-bold">DEEP</span
+          ><span class="light-primary-color font-bold">LIME</span>, we develop
+          custom softwares/web-apps, train geologists on the use of python, and
+          provide our 2 flagship softwares - the pyLime python library &
+          DeepLime Geoportal.
+        </p>
+      </div>
+    </section>
+
+    <main class="container mx-auto">
+      <!-- Modelling -->
+      <section class="flex flex-wrap items-center my-36">
+        <div class="md:w-1/2 my-12">
+          <div class="mx-4 lg:mx-32">
+            <h2
+              class="mb-12 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              Modelling
+            </h2>
+            <div class="w-full text-lg text-gray-700 leading-relaxed">
+              Our team of data-scientists helps the geoscientists automate their
+              model creation.
+              <span class="font-medium">The workflow is standardised</span>, and
+              the amount of
+              <span class="font-medium">time spent on a model is reduced</span>
+              by days/weeks/months.
+            </div>
+          </div>
+        </div>
+        <div
+          class="my-12 flex flex-col w-full md:w-1/2 p-4 md:p-8 lg:p-12 bg-gray-50 rounded-lg shadow-lg"
+        >
+          <h2 class="font-bold text-gray-800 uppercase mb-4">
+            We have worked on diverse projects such as:
+          </h2>
+
+          <ul class="space-y-1">
+            <li class="flex items-center text-gray-700">
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Drillhole database cleaning
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >XRF data reading
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Classification of samples interpretation
+            </li>
+
+            <li class="flex items-center text-gray-700">
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Geomodelling
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Geostatistical blocking
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Resource/reserve reporting
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Grade control
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Open pit optimization
+            </li>
+            <li class="flex items-center text-gray-700">
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >And more!
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Data -->
+      <section class="flex flex-wrap items-center my-36">
+        <div class="md:w-1/2 my-12">
+          <div class="mx-4 lg:mx-32">
+            <h2
+              class="mb-12 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              Data/project governance
+            </h2>
+            <div class="w-full text-lg text-gray-700 leading-relaxed">
+              We develop DeepLime Geoportal to help with governance of data,
+              models, but also workflows used to transform one into the other.
+              The platform provides a central location for data to be accessed
+              by the whole team as well as a mechanism to keep its history and
+              retrieve any version of any data at any time.
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full md:w-1/2 p-4">
+          <div class="md:pt-44">
+            <p
+              class="flex items-center mb-2 text-lg text-gray-700 leading-relaxed"
+            >
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  />
+                </svg> </span
+              >Data is centralised and accessible to relevant stakeholders
+            </p>
+            <p
+              class="flex items-center mb-2 text-lg text-gray-700 leading-relaxed"
+            >
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Data is securely stored on the cloud
+            </p>
+            <p
+              class="flex items-center mb-2 text-lg text-gray-700 leading-relaxed"
+            >
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Data is standardised to allow for automation and analytics
+            </p>
+            <p
+              class="flex items-center mb-6 text-lg text-gray-700 leading-relaxed"
+            >
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >Data is versioned and auditable
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IP -->
+      <section class="flex flex-wrap items-center my-36">
+        <div
+          class="my-12 flex flex-col w-full md:w-1/2 p-4 bg-gray-50 rounded-lg shadow-lg"
+        >
+          <div
+            class="relative w-full transition-shadow duration-300 rounded-lg"
+          >
+            <img
+              class="object-cover w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96"
+              src="./assets/dashboards.png"
+              alt=""
+            />
+            <a
+              href="/"
+              aria-label="Play Video"
+              class="absolute inset-0 flex items-center justify-center w-full h-full transition-colors duration-300 bg-gray-900 bg-opacity-50 group hover:bg-opacity-25"
+            >
+              <div
+                class="flex items-center justify-center w-16 h-16 transition duration-300 transform bg-white rounded-full shadow-2xl group-hover:scale-110"
+              >
+                <svg
+                  class="w-10 text-gray-900"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16.53,11.152l-8-5C8.221,5.958,7.833,5.949,7.515,6.125C7.197,6.302,7,6.636,7,7v10 c0,0.364,0.197,0.698,0.515,0.875C7.667,17.958,7.833,18,8,18c0.184,0,0.368-0.051,0.53-0.152l8-5C16.822,12.665,17,12.345,17,12 S16.822,11.335,16.53,11.152z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 my-12">
+          <div class="mx-4 lg:mx-32">
+            <h2
+              class="mb-12 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              IP-tech integration
+            </h2>
+            <div class="w-full text-lg text-gray-700 leading-relaxed">
+              DeepLime’s expertise and tools provide a unique opportunity to
+              deploy new technology. We work with researchers from varied
+              backgrounds (geostatisticians, machine learning’ists,
+              explorationists, engineers, mineralogists, …) to facilitate the
+              application of their workroutines into the workplace. This is an
+              essential step for the creation and evolution of new technology
+              and IP for any company.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Geoportal -->
+      <section class="flex flex-wrap items-center my-36">
+        <div class="md:w-1/2 my-12">
+          <div class="mx-4 lg:mx-32">
+            <h2
+              class="mb-12 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              DeepLime Geoportal
+            </h2>
+            <div class="w-full text-lg text-gray-700 leading-relaxed">
+              Our web-based platform for data/workflow governance empowers
+              internal developments by being able to deploy scripts/workflows to
+              the rest of the company users.
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full md:w-1/2 p-4">
+          <div class="flex flex-col p-4 mb-6 md:mb-0 text-left items-start">
+            <div class="flex-grow">
+              <h2 class="font-bold text-gray-800 uppercase mb-4">
+                Data exploration
+              </h2>
+              <p class="w-full text-base text-gray-700 leading-relaxed">
+                DeepLime Geoportal's unique Exploratory Data Analysis tools are
+                designed for the geologist. Use the most innovative tools in
+                geosciences and a unique set of interactive graphics.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col p-4 mb-6 md:mb-0 text-left items-start">
+            <div class="flex-grow">
+              <h2 class="font-bold text-gray-800 uppercase mb-4">Modelling</h2>
+              <p class="w-full text-base text-gray-700 leading-relaxed">
+                All DeepLime Geoportal tools can be chained and automated,
+                offering a smooth experience for repetitive and custom tasks,
+                because we know that "it's always different".
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col p-4 mb-6 md:mb-0 text-left items-start">
+            <div class="flex-grow">
+              <h2 class="font-bold text-gray-800 uppercase mb-4">Sharing</h2>
+              <p class="w-full text-base text-gray-700 leading-relaxed">
+                As a web solution, DeepLime is designed to publish results
+                within your company, including project sharing, dispatch of
+                routines, and automatic reporting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology -->
+      <section class="flex flex-wrap items-center my-36">
+        <div
+          class="my-12 flex flex-col w-full md:w-1/2 p-4 bg-gray-50 rounded-lg shadow-lg"
+        >
+          <img
+            src="./assets/dashboards.png"
+            alt="technology"
+            class="img-fill"
+          />
+        </div>
+        <div class="md:w-1/2 my-12">
+          <div class="mx-4 lg:mx-32">
+            <h2
+              class="mb-12 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              Technology
+            </h2>
+            <p
+              class="flex items-center mb-2 text-lg text-gray-700 leading-relaxed"
+            >
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  />
+                </svg> </span
+              >DeepLime Geoportal as SaaS or as private cloud deployment allow
+              to scale and adapt hardware resources at a competitive cost.
+            </p>
+            <p
+              class="flex items-center mb-2 text-lg text-gray-700 leading-relaxed"
+            >
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >DeepLime Geoportal can fully take advantage of Pylime as well as
+              integrating 3rd-party libraries or software
+            </p>
+            <p
+              class="flex items-center mb-6 text-lg text-gray-700 leading-relaxed"
+            >
+              <span
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-4 rounded-full"
+              >
+                <svg
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  /></svg></span
+              >DeepLime Geoportal is currently supporting MS Azure cloud
+              deployments.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pylime -->
+      <section class="flex flex-wrap items-center my-36">
+        <div class="md:w-1/2 my-12">
+          <div class="mx-4 lg:mx-32">
+            <h2
+              class="mb-12 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              PyLime
+            </h2>
+            <div class="w-full text-lg text-gray-700 leading-relaxed">
+              Our Python library unleashing data analysis, data validation,
+              geomodeling, geostatistics, etc. capabilities fully compatible
+              with DeepLime Geoportal and can be used as stand alone.
+            </div>
+          </div>
+        </div>
+        <div
+          class="my-12 flex flex-col w-full md:w-1/2 p-4 bg-gray-50 rounded-lg shadow-lg"
+        >
+          <img src="./assets/mockup.jpg" class="img-fill" alt="mockup" />
+        </div>
+      </section>
+
+      <!-- History -->
+      <section class="flex flex-wrap items-center my-36">
+        <div
+          class="my-12 hidden lg:flex flex-col lg:w-1/2 p-4 bg-gray-50 rounded-lg shadow-lg"
+        >
+          <img
+            src="./assets/james-hutton.gif"
+            alt="James Hutton"
+            class="img-fill"
+          />
+        </div>
+        <div class="lg:w-1/2 my-12">
+          <div class="mx-4 lg:mx-32">
+            <h2
+              class="mb-12 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              Our History
+            </h2>
+            <div class="w-full text-lg text-gray-700 leading-relaxed">
+              <span class="primary-color font-bold">DEEP</span
+              ><span class="light-primary-color font-bold">LIME</span> was
+              created in 2017 as we saw a clear lack of automation, data science
+              and cloud expertise in the geoscience consulting and software
+              landscape. The co-fonding team cumulates more than 40 years of
+              experience in the geoscience industry and is backed-up by a team
+              of brilliant developers/data-scientists with various backgrounds.
+              We decided to develop custom routines for each client based on a
+              solid platform, to go against the current with monolithic products
+              trying painfully to fit every client. We set up a team mixing data
+              science and cloud experts with strong backgrounds in mining and
+              oil & gas. The company is now established in 3 counties and the
+              team is continuously growing. In 2019 DeepLime put in production
+              its first instance of the platform on client cloud, which has now
+              delivered several estimations and reports for more than 300 pits
+              and is used on a daily basis.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial -->
+      <div class="bg-white w-full mx-auto p-8 -mt-20">
+        <p
+          class="text-gray-600 dark:text-white w-full md:w-2/3 m-auto text-center text-lg md:text-3xl"
+        >
+          <span class="font-bold text-green-600"> “ </span>
+          Man is made for science.
+          <span class="primary-color font-bold">DEEP</span
+          ><span class="light-primary-color font-bold">LIME</span> too.
+          <span class="font-bold text-green-600"> ” </span>
+        </p>
+        <div class="flex items-center justify-center my-8">
+          <div class="flex ml-2 items-center justify-center">
+            <span class="font-semibold text-green-600 mr-2 text-lg">
+              James Hutton
+            </span>
+            <span class="text-gray-500 text-xl font-light"> / </span>
+            <span class="text-gray-500 text-md ml-2">
+              ‘father’ of modern geology
+            </span>
+          </div>
+        </div>
+
+        <p
+          class="text-sm text-gray-500 text-semibold text-center tracking-wide mx-auto"
+        >
+          It would have been an awesome quote, right?
+        </p>
+      </div>
+
+      <!-- Localisation -->
+      <section class="flex flex-wrap items-center my-36">
+        <div
+          class="my-12 hidden lg:flex flex-col h-full lg:w-1/2 p-4 bg-gray-50 rounded-lg shadow-lg"
+        >
+          <div class="h-96 globe-canvas w-full"></div>
+        </div>
+        <div class="lg:w-1/2 my-12">
+          <div class="mx-4 lg:mx-32">
+            <h2
+              class="mb-12 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl"
+            >
+              Where <br />to find us?
+            </h2>
+            <div class="w-full text-lg text-gray-700 leading-relaxed">
+              Our team operates in <span class="font-semibold">Europe</span> -
+              Paris (France) - where we benefit from an international data
+              science hub, and in <span class="font-semibold">Oceania</span> -
+              Perth (Australia) & Noumea (New-Caledonia) - where we interact
+              with our users.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-gray-600 body-font">
+      <div class="border-t border-gray-200">
+        <div class="container px-5 py-8 flex flex-wrap mx-auto items-center">
+          <div
+            class="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start"
+          >
+            <div class="relative sm:w-64 w-40 sm:mr-4 mr-2">
+              <input
+                type="text"
+                id="contact"
+                name="contact"
+                placeholder="Your Work Email"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-green-200 focus:border-green-600 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <button
+              class="inline-flex text-white bg-green-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-500 rounded-lg"
+            >
+              Contact us
+            </button>
+
+            <p
+              class="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center"
+            >
+              Any request?
+              <br class="lg:block hidden" />Drop us your email.
+            </p>
+          </div>
+          <span
+            class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto space-x-8"
+          >
+            <a class="text-gray-500">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="text-gray-500">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="text-gray-500">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                ></path>
+              </svg>
+            </a>
+            <a class="text-gray-500">
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="0"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+      <div class="bg-gray-100">
+        <div
+          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row justify-between"
+        >
+          <a
+            href="mailto:contact@deeplime.io?subject=Hi!"
+            class="sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="w-5 h-5 mr-2"
+            >
+              <path
+                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+              ></path>
+              <path
+                d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+              ></path>
+            </svg>
+            contact@deeplime.io</a
+          >
+
+          <p class="text-gray-500 text-sm text-center sm:text-left flex">
+            <img src="./assets/blaze.svg" class="h-4 px-2 self-center" alt="" />
+            - © 2021 DEEPLIME
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script src="./js/three.min.js"></script>
     <script src="./js/vanta.globe.min.js"></script>
-    <script src="./js/hero.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

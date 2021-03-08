@@ -1,3 +1,189 @@
+/*
+FONTS IMPORT
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@900&display=swap");
+
+/*
+COLORS DEFINITION
+*/
+
+:root {
+  --primary: #6ec075;
+  --light-primary: #b3e189;
+  --yellow: #fbbf24;
+  --white: #fff;
+  --black: #111827;
+}
+
+/*
+MAIN CSS
+*/
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.title {
+  font-family: "Overpass", sans-serif;
+}
+
 .leading-title {
-  line-height: 3.5rem;
+  line-height: 2.5rem;
+}
+
+p {
+  max-width: 60ch;
+}
+
+.primary-color {
+  color: var(--primary);
+}
+
+.light-primary-color {
+  color: var(--light-primary);
+}
+
+.img-fill {
+  inline-size: -webkit-fill-available;
+}
+
+#logo {
+  z-index: 2;
+}
+
+/* Hamburger */
+#hamburger {
+  display: none;
+}
+
+label {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  display: block;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  transition: 0.3s ease transform;
+  cursor: pointer;
+}
+
+label div {
+  width: 6px;
+  height: 6px;
+  background-color: var(--black);
+  margin-left: 0;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  transition: 0.3s ease width, 0.3s ease margin-left, 0.3s ease margin-bottom,
+    0.3s ease background-color;
+}
+
+label div:first-child {
+  width: 1.5rem;
+}
+
+label div:nth-child(2) {
+  width: 1rem;
+}
+
+label div:last-child {
+  width: 1.5rem;
+  margin-bottom: 0;
+}
+
+#hamburger:checked + label {
+  transform: translateY(-50%) rotateZ(-90deg);
+}
+
+#hamburger:checked + label div {
+  width: 6px;
+  margin-left: 12px;
+  margin-bottom: 3px;
+  background-color: var(--light-primary);
+  z-index: 200;
+}
+
+/* Bg menu */
+.nav-links {
+  left: 0;
+  top: 0;
+  right: 0;
+  position: fixed;
+  background: var(--black);
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  clip-path: circle(100px at 100% -20%);
+  -webkit-clip-path: circle(100px at 100% -20%);
+  transition: all 1s ease-out;
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: auto;
+}
+.nav-links.open {
+  clip-path: circle(200% at 100% -20%);
+  -webkit-clip-path: circle(200% at 100% -20%);
+}
+.nav-links li {
+  opacity: 0;
+}
+.nav-links li a {
+  text-decoration: none;
+}
+.nav-links li:nth-child(1) {
+  transition: all 0.5s ease 0.2s;
+}
+.nav-links li:nth-child(2) {
+  transition: all 0.5s ease 0.4s;
+}
+.nav-links li:nth-child(3) {
+  transition: all 0.5s ease 0.6s;
+}
+li.fade {
+  opacity: 1;
+}
+
+/* CTA button */
+.cta-svg-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 20rem;
+  width: 100%;
+}
+.cta-shape {
+  height: 60px;
+  max-width: 20rem;
+  width: 100%;
+
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -200%;
+  stroke-width: 0.5rem;
+  fill: transparent;
+  stroke: var(--black);
+  border-bottom: 5px solid var(--primary);
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.cta-text {
+  text-align: center;
+  line-height: 2rem;
+  top: -3rem;
+  position: relative;
+}
+.cta-svg-wrapper:hover .cta-shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+
+.cta-svg {
+  height: 60px;
+  width: 100%;
+  max-width: 20rem;
 }
