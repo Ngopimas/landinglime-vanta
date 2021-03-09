@@ -94,7 +94,7 @@
     if (hasWebGL()) {
       window
         .fetch(
-          "https://raw.githubusercontent.com/timc1/svg-to-coordinates/master/points.json"
+          "https://raw.githubusercontent.com/Ngopimas/svg-to-coordinates/master/points.json"
         )
         .then((response) => response.json())
         .then((data) => {
