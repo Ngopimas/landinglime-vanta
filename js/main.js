@@ -18,18 +18,3 @@ if (document) {
     });
   });
 }
-
-if (VANTA) {
-  VANTA.GLOBE({
-    el: ".globe-canvas",
-    mouseControls: false,
-    // touchControls: true,
-    // gyroControls: true,
-    minHeight: 200.0,
-    minWidth: 200.0,
-    scale: 1.0,
-    color: 0x219653,
-    color2: 0xb3e189,
-    backgroundColor: 0xf3f4f6,
-  });
-}
