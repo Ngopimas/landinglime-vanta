@@ -93,7 +93,7 @@
   const init = () => {
     if (hasWebGL()) {
       window
-        .fetch("/assets/data/points.json")
+        .fetch("../assets/points.json")
         .then((response) => response.json())
         .then((data) => {
           createGlobe(data.points);
