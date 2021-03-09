@@ -93,7 +93,9 @@
   const init = () => {
     if (hasWebGL()) {
       window
-        .fetch("../assets/points.json")
+        .fetch(
+          "https://raw.githubusercontent.com/timc1/svg-to-coordinates/master/points.json"
+        )
         .then((response) => response.json())
         .then((data) => {
           createGlobe(data.points);
