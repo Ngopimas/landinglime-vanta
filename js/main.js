@@ -18,3 +18,7 @@ if (document) {
     });
   });
 }
+
+if (AOS) {
+  AOS.init({});
+}
