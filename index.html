@@ -149,13 +149,11 @@
       </div>
 
       <div class="relative container mx-auto px-6 lg:px-12">
-        <div class="min-h-screen flex flex-col justify-evenly lg:py-40 py-10">
+        <div
+          class="md:min-h-screen flex flex-col justify-evenly md:py-40 py-10"
+        >
           <h1
-            data-aos="fade-in"
-            data-aos-delay="1400"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            class="mb-8 text-base text-gray-700 lg:text-2xl uppercase leading-title text-center md:text-left"
+            class="mb-8 text-sm text-gray-700 lg:text-2xl uppercase md:leading-loose text-center md:text-left"
           >
             Tools built to assist geologists <br />
             in their digital transformation
@@ -189,7 +187,7 @@
             </span>
           </h2>
 
-          <div class="w-full lg:w-1/3">
+          <div class="hidden md:block w-full lg:w-1/3">
             <div class="flex mt-28 md:justify-start justify-evenly">
               <div class="text-green-600 text-sm tracking-wide font-medium">
                 SCROLL DOWN <br />
@@ -205,14 +203,7 @@
     </section>
 
     <!-- About -->
-    <section
-      data-aos="fade-in"
-      data-aos-mirror="true"
-      data-aos-once="false"
-      data-aos-duration="500"
-      class="container px-4 mx-auto mt-24 md:my-36 lg:px-4"
-      id="about"
-    >
+    <section class="container px-4 mx-auto mt-8 md:my-36 lg:px-4" id="about">
       <div class="flex flex-col w-full mb-12 text-left lg:text-center">
         <h2
           class="mb-12 text-4xl font-extrabold tracking-tight md:leading-tight text-gray-900 sm:text-6xl"
@@ -233,7 +224,7 @@
             <!-- CTA -->
             <a
               href="#mce-EMAIL"
-              class="cta rounded-lg text-lg font-bold tracking-widest uppercase shadow-lg mt-8"
+              class="cta rounded-lg text-lg font-bold tracking-widest uppercase shadow-lg my-8"
               ><span>Get Started</span><em></em
             ></a>
           </div>
@@ -241,7 +232,7 @@
       </div>
     </section>
 
-    <main class="container mx-auto">
+    <main class="container mx-auto mt-24 md:mt-56">
       <!-- Modelling -->
       <section class="flex flex-wrap items-center md:my-36">
         <div
@@ -903,7 +894,7 @@
     <footer class="flex justify-center px-4 text-gray-100 bg-gray-900">
       <div class="container py-6">
         <h2
-          class="mt-8 text-center text-lg font-semibold lg:text-2xl leading-title"
+          class="mt-8 text-center text-lg font-semibold lg:text-2xl md:leading-loose"
         >
           We provide modern tools for geologists.<br />
           Join the move. Let's work together.
@@ -947,7 +938,7 @@
                     value=""
                   />
                 </div>
-                <div class="clear">
+                <div class="clear w-auto">
                   <input
                     type="submit"
                     value="Get Started"

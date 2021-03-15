@@ -210,6 +210,7 @@ li.fade {
   position: absolute;
   transform: translate(-50%, -50%);
   z-index: 0;
+  max-width: 95vw;
 }
 .cta span {
   color: var(--white);
