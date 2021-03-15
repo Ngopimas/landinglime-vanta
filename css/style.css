@@ -11,6 +11,7 @@ COLORS DEFINITION
 :root {
   --primary: #6ec075;
   --light-primary: #b3e189;
+  --dark-primary: #16a34a;
   --yellow: #fbbf24;
   --white: #fff;
   --black: #111827;
@@ -19,6 +20,25 @@ COLORS DEFINITION
 /*
 MAIN CSS
 */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0; /* interferes with 100vw */
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -50,6 +70,10 @@ p {
 
 #logo {
   z-index: 2;
+}
+
+#mc_embed_signup form {
+  padding: O !important;
 }
 
 /* Hamburger */
@@ -110,11 +134,11 @@ label div:last-child {
 .nav-links {
   left: 0;
   top: 0;
-  right: 0;
+  left: 0;
   position: fixed;
   background: var(--black);
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   flex-direction: column;
   clip-path: circle(100px at 100% -20%);
   -webkit-clip-path: circle(100px at 100% -20%);
@@ -174,4 +198,74 @@ li.fade {
   to {
     transform: translate(0, 6px) scale(1, 0.8);
   }
+}
+
+/* CTA */
+.cta {
+  cursor: pointer;
+  background-color: var(--black);
+  width: 330px;
+  height: 64px;
+  line-height: 64px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+.cta span {
+  color: var(--white);
+  display: block;
+  padding-left: 2rem;
+  transform: scaleX(0.6);
+  transform-origin: center left;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.cta em {
+  position: absolute;
+  height: 1px;
+  background: var(--white);
+  width: 47%;
+  right: 1.5rem;
+  top: 50%;
+  transform: scaleX(0.25);
+  transform-origin: center right;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.cta:before,
+.cta:after {
+  content: "";
+  background: var(--white);
+  height: 50%;
+  width: 0;
+  position: absolute;
+  transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.cta:before {
+  top: 0;
+  left: 0;
+  right: auto;
+}
+.cta:after {
+  bottom: 0;
+  right: 0;
+  left: auto;
+}
+.cta:hover:before {
+  width: 100%;
+  right: 0;
+  left: auto;
+}
+.cta:hover:after {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+.cta:hover span {
+  color: var(--black);
+}
+.cta:hover em {
+  background: var(--black);
+  transform: scaleX(0.8);
 }
